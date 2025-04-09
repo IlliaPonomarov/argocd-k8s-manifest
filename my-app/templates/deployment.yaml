@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world-container
-          image: {{ .Values.image.repository }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.targetPort }}
@@ -22,6 +22,6 @@ spec:
           - name: MESSAGE
             valueFrom:
               configMapKeyRef:
-                name: hello-world-config
+                name: hello-world-config-helm
                 key: APP_MESSAGE
 
