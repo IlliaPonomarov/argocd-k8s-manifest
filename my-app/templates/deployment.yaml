@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world-container
-          image: {{ .Values.image.repository }}::{{.Values.image.tag }}
+          image: {{ .Values.image.repository }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.targetPort }}
