@@ -1,0 +1,17 @@
+replicaCount: 5
+
+image:
+  repository: crccheck/hello-world
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8000
+  nodePort: 30001  
+
+config:
+  APP_MESSAGE: "Hello from Argo CD!"
+  APP_ENV: "production"
+
